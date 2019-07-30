@@ -1,0 +1,14 @@
+<div class="post">
+    {% if post.pub_date %}
+        <div class="date">
+            <p>{{post.pub_date}}에 작성된 글입니다.</p>
+        </div>
+    {% endif %}
+    <h1>{{post.title}}</h1>
+    <p>{{post.body|linebreaksbr}}</p>
+</div>
+
+<a href="{% url 'post_edit' pk=post.pk %}">수정하기</a>
+<a href="{% url 'post_remove' pk=post.pk %}">삭제하기</a>
+<br><br>
+<a href="{% url 'home' %}">홈으로 돌아가기</a>

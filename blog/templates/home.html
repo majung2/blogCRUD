@@ -1,0 +1,10 @@
+<h1> MAJUNGE's BLOG </h1>
+<p>총 {{total}}개의 게시글이 있습니다.</p>
+<a href="{% url 'new' %}">글쓰기</a>
+{% for post in posts_list %}
+    <h3><a href="{% url 'post_detail' pk=post.pk %}">{{post.title}}</a></h3>
+    <p>{{post.pub_date}}</p>
+    <p>{{post.body}}</p>
+    <br><br>
+{% endfor %}
+
